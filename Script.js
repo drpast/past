@@ -155,7 +155,7 @@ $(function(){
   document.getElementById("searchtext").value=id;
   document.getElementById("searchsymbol").click();
   document.getElementById("search-form").reset();
-  document.getElementById("resetx").click();
+  document.getElementById("reset").click();
   //document.getElementById("message").innerHTML = " ";
 
  
