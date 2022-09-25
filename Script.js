@@ -132,7 +132,7 @@ $(function(){
   function handleFormSubmit(formObject) {
            Swal.fire({
   title: 'Registering Patient',
-  html: 'Fetching Database',
+  html: 'Updating Database',
   timer: 5000,
   timerProgressBar: true,
 })
@@ -155,7 +155,7 @@ $(function(){
   document.getElementById("searchtext").value=id;
   document.getElementById("searchsymbol").click();
   document.getElementById("search-form").reset();
-  //document.getElementById("reset").click();
+  document.getElementById("resetx").click();
   //document.getElementById("message").innerHTML = " ";
 
  
