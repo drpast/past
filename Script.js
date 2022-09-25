@@ -1,12 +1,19 @@
-
-  // ############################# online status alert ########################################
-  
-
+setInterval(()=>{  
+var genderx=document.getElementById("gender").value;
+var birthx=document.getElementById("birth").value;
+if(genderx=="" || birthx==""){
+  document.getElementById("gender").style.color="#FFC300";
+  document.getElementById("birth").style.color="#FFC300";
+}
+else{
+  document.getElementById("gender").style.color="black";
+  document.getElementById("birth").style.color="black";
+}}, 10);
 
 setInterval(()=>{
  if(navigator.onLine){
    
-   document.getElementById("clock").style="margin:37px 0px 0px -377px";
+   document.getElementById("clock").style="margin:37px 0px 0px -377px;";
    document.getElementById("clock").style.transform="scale(.7)";
    //document.getElementById("logo").style="margin-top:-300px;";
    //document.getElementById("logo").style="margin-left:-160px;";
@@ -44,6 +51,7 @@ setInterval(()=>{
    //document.getElementById("wifi").style.display="none";
  }}, 1000);
 
+
 var p = new Ping();
  
 
@@ -53,11 +61,6 @@ p.ping("https://google.com", function(err, data) {
     $("#ping").html(data);
 });
 }, 1000);
-
-
- 
-
-
 
 
 
@@ -128,8 +131,8 @@ $(function(){
   //HANDLE FORM SUBMISSION
   function handleFormSubmit(formObject) {
            Swal.fire({
-  title: 'Adding Record ',
-  html: 'Connecting to Database',
+  title: 'Registering ',
+  html: 'Updating Database',
   timer: 5000,
   timerProgressBar: true,
 })
@@ -144,6 +147,9 @@ $(function(){
   var phone =document.getElementById("phone").value;
   Swal.fire(name+'<br>'+'<FONT COLOR="#ff0000">'+'UId'+' : '+ id+'</FONT>'+'<br>'+phone+'<br>'+'<FONT COLOR="green">'+'Added Successfuly.'); 
   google.script.run.withSuccessHandler(onSuccess).getCount();
+
+  document.getElementById("register").style.display="block";
+  document.getElementById("update").style.display="none";
   
 
   document.getElementById("searchtext").value=id;
@@ -195,7 +201,7 @@ $(function(){
     //CREATE THE DATA TABLE
   function createTable(dataArray) {
     if(dataArray){
-      var result = "<table  id='tbody' class='table-hover   ' style='table-layout:fixed;'  >"+
+      var result = "<table  id='tbody' class='table-hover' style='table-layout:fixed;'  >"+
                   
                    "<thead   >"+
                     //  "<tr >"+                               //Change table headings to match witht he Google Sheet
@@ -225,7 +231,7 @@ result += "<tr class=' form-control border  rounded mb-3' style='width:99.8%; he
           
           result += "<td ><i name='idelete' class='fa-solid fa-trash deleteBtn' onclick='deleteData(this);'></i></td>";
           
-          result += "<div><td><i class='fa-solid fa-user-pen editBtn'onclick='editData(this) ;'></i></td></div>";
+          result += "<td><i class='fa-solid fa-user-pen editBtn'onclick='editData(this) ;'></i></td>";
           for(var j=0; j<dataArray[i].length; j++){
               result += "<td>"+dataArray[i][j]+"</td>";
               
@@ -312,7 +318,8 @@ var password = document.getElementById("password").value;
 if (password=="1234") {
   document.getElementById("lock").style.display="none";
   document.getElementById("unlock").style.display="block";
-  document.getElementById("fulltable").style="background-color:#FAFEA8";
+  //document.getElementById("unlock").innerHTML="";
+  //document.getElementById("tbody").style="background-color:#CCC8C7";
   //
    const nodeList = document.querySelectorAll(".deleteBtn");
 for (let i = 0; i < nodeList.length; i++) {
@@ -320,7 +327,7 @@ for (let i = 0; i < nodeList.length; i++) {
   //
 }
 else{
-document.getElementById("fulltable").style=" ";  
+//document.getElementById("tbody").style=" ";  
 document.getElementById("unlock").style.display="none";
 document.getElementById("lock").style.display="block";
 const nodeList = document.querySelectorAll(".deleteBtn");
@@ -346,8 +353,8 @@ document.getElementById('password').value ="";
   //EDIT DATA
   function editData(el){
        Swal.fire({
-  title: 'EDITING MODE',
-  html: 'Loading Patient Details',
+  title: 'Loading Patient Details',
+  html: 'For Editing',
   timer: 1500,
   timerProgressBar: false,
 })
@@ -487,8 +494,10 @@ setInterval(()=>{
 }, 500);
 
 
- function mssgreset() {
-  document.getElementById("message").innerHTML= " ";
+ function resetx() {
+  //document.getElementById("message").innerHTML= " ";
+  document.getElementById("register").style.display="block";
+  document.getElementById("update").style.display="none";
   
 } 
 
@@ -517,8 +526,9 @@ const options2 = { day: 'numeric', month: 'short',year:'numeric',weekday:'long'}
 
 //client id
 google.script.run.withSuccessHandler(function(userEmail) 
-    {  document.getElementById("user1").innerHTML = userEmail;
-       document.getElementById("userid").innerHTML = userEmail;
+    {  document.getElementById("user1").innerHTML = usertrim;
+    var usertrim=userEmail.substring(0, userEmail.length -10);
+       document.getElementById("userid").innerHTML = usertrim;
        //document.getElementById("userid2").innerHTML = userEmail;
        
     }).getUserId();
@@ -718,6 +728,3 @@ google.script.run.withSuccessHandler(createTable).getAllData();
 
 
 document.getElementById('WinterIsComing').innerHTML='dhappa';
-
-
-    
