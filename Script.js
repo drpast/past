@@ -6,7 +6,7 @@
 setInterval(()=>{
  if(navigator.onLine){
    
-   document.getElementById("clock").style="margin:37px 0px 0px -377px;";
+   document.getElementById("clock").style="margin:37px 0px 0px -377px";
    document.getElementById("clock").style.transform="scale(.7)";
    //document.getElementById("logo").style="margin-top:-300px;";
    //document.getElementById("logo").style="margin-left:-160px;";
