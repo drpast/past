@@ -3,7 +3,7 @@ var genderx=document.getElementById("gender").value;
 var birthx=document.getElementById("birth").value;
 if(genderx=="" || birthx==""){
   document.getElementById("gender").style.color="#FFC300";
-  document.getElementById("birth").style.color="red";
+  document.getElementById("birth").style.color="#FFC300";
 }
 else{
   document.getElementById("gender").style.color="black";
