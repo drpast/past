@@ -353,7 +353,7 @@ document.getElementById('password').value ="";
   //EDIT DATA
   function editData(el){
        Swal.fire({
-  title: 'Loading Patient Details',
+  title: 'Fetching Patient Details',
   html: 'For Editing',
   timer: 1500,
   timerProgressBar: false,
