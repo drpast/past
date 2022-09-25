@@ -48,13 +48,13 @@ setInterval(()=>{
 
  
 
-setInterval(()=>{
-	var p = new Ping();
-p.ping("https://google.com", function(err, data) {
-		data = data + "  " +" ms";
-    $("#ping").html(data);
-});
-}, 1000);
+// setInterval(()=>{
+// 	var p = new Ping();
+// p.ping("https://google.com", function(err, data) {
+// 		data = data + "  " +" ms";
+//     $("#ping").html(data);
+// });
+// }, 1000);
 
 
 
