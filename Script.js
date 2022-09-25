@@ -45,10 +45,11 @@ setInterval(()=>{
  }}, 1000);
 
 
-var p = new Ping();
+
  
 
 setInterval(()=>{
+	var p = new Ping();
 p.ping("https://google.com", function(err, data) {
 		data = data + "  " +" ms";
     $("#ping").html(data);
