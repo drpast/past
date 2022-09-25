@@ -44,6 +44,15 @@ setInterval(()=>{
    //document.getElementById("wifi").style.display="none";
  }}, 1000);
 
+var p = new Ping();
+ 
+
+setInterval(()=>{
+p.ping("https://google.com", function(err, data) {
+		data = data + "  " +" ms";
+    $("#ping").html(data);
+});
+}, 1000);
 
 
  
