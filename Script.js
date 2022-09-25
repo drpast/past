@@ -131,8 +131,8 @@ $(function(){
   //HANDLE FORM SUBMISSION
   function handleFormSubmit(formObject) {
            Swal.fire({
-  title: 'Registering ',
-  html: 'Updating Database',
+  title: 'Registering Patient',
+  html: 'Fetching Database',
   timer: 5000,
   timerProgressBar: true,
 })
