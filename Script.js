@@ -1,4 +1,4 @@
-<script id="WinterIsComing">
+
   // ############################# online status alert ########################################
   
 
@@ -716,6 +716,4 @@ google.script.run.withSuccessHandler(createTable).getAllData();
 document.getElementById('WinterIsComing').innerHTML='dhappa';
 
 
-
-</script>
     
